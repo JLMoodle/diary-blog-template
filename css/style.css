@@ -1,0 +1,35 @@
+/* ============================================================
+   Мой дневник — стили
+   Лаб 3: оформите блог, используя:
+   - CSS-переменные (--color-*, --gap-*, --radius-*);
+   - Flexbox и/или Grid для лэйаута;
+   - медиазапросы для адаптивности.
+   ============================================================ */
+
+:root {
+  /* Цветовая схема блога — подберите свою тему */
+  --color-bg: #f7f5f2;
+  --color-text: #2b2b2b;
+  --color-accent: #9c27b0;
+  --color-card: #ffffff;
+
+  --gap: 1rem;
+  --radius: 12px;
+}
+
+/* Простой сброс отступов (reset) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Дальше: стили header/nav/main/aside/footer, карточки записей,
+   адаптивная раскладка. Дополняйте в лабе 3 и улучшайте в лабе 13. */
