@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой дневник — записи</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Мой дневник</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О блоге</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main>
+      <!-- Две страницы дневника, из лабы 2 -->
+      <section>
+        <h2>Последние записи</h2>
+        <div id="posts"></div>
+      </section>
+
+      <!-- Черновик: форма добавления записи -->
+      <section id="post-form">
+        <h2>Новая запись</h2>
+        <form id="add-post" novalidate>
+          <div class="frm-row">
+            <label for="title">Заголовок</label>
+            <input type="text" id="title" name="title">
+            <p class="error" id="title-error"></p>
+          </div>
+          <div class="frm-row">
+            <label for="category">Категория</label>
+            <select id="category" name="category"></select>
+            <p class="error" id="category-error"></p>
+          </div>
+          <div class="frm-row">
+            <label for="content">Текст записи</label>
+            <textarea id="content" name="content" rows="6"></textarea>
+            <p class="error" id="content-error"></p>
+          </div>
+          <button type="submit">Опубликовать</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

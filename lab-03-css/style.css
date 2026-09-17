@@ -1,0 +1,158 @@
+/* ============================================================
+   Мой дневник — таблица стилей
+   Рабочий файл лабораторной №3.
+   Дополняется в лабораторной №13 (оптимизация CSS/JS), не удалять!
+   ============================================================ */
+
+/* ---------- 1. Тема: CSS-переменные ---------- */
+:root {
+  /* TODO лаба 3: подберите свою цветовую схему */
+  --color-bg: #f7f5f2;        /* фон страницы */
+  --color-text: #2b2b2b;      /* основной текст */
+  --color-muted: #6b6b6b;     /* приглушённый текст (даты, подписи) */
+  --color-accent: #9c27b0;    /* акцент (ссылки, кнопки, заголовки) */
+  --color-card: #ffffff;      /* фон «карточек» записей */
+
+  --gap: 1.25rem;             /* отступ между блоками */
+  --radius: 12px;             /* скругление углов */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- 2. Ресет ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 3. База ---------- */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- 4. Шапка и меню ---------- */
+header {
+  /* TODO лаба 3: панель на Flexbox: заголовок слева, меню справа */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--gap);
+  background: var(--color-card);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  /* TODO лаба 3: оформить пункты меню (без подчёркиваний, паддинги, :hover акцентом) */
+  text-decoration: none;
+}
+
+/* ---------- 5. Раскладка страницы ---------- */
+.layout {
+  /* TODO лаба 3: Grid: колонка контента и сайдбар (например 1fr 280px) */
+  display: grid;
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+/* ---------- 6. Записи (карточки) ---------- */
+article.post {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+article.post h3 {
+  /* TODO лаба 3: стиль заголовка записи */
+}
+
+article.post time {
+  color: var(--color-muted);
+  font-size: 0.85em;
+}
+
+article.post p {
+  margin: 0.5rem 0;
+}
+
+.read-more {
+  /* TODO лаба 3: стиль ссылки «Читать далее» */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- 7. Сайдбар (категории) ---------- */
+aside ul {
+  list-style: none;
+  /* TODO лаба 3: оформление списка категорий */
+}
+
+/* ---------- 8. Кнопки и формы (пригодится в лабах 5, 8, 11) ---------- */
+button,
+.btn {
+  background: var(--color-accent);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  /* TODO лаба 3: лёгкое затемнение акцента при наведении */
+  filter: brightness(0.92);
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+/* ---------- 9. Подвал ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-muted);
+}
+
+/* ---------- 10. Адаптивность ---------- */
+/* TODO лаба 3: до 768px — сайдбар под контентом */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TODO лаба 3: до 480px — вертикальное меню, меньшие отступы */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

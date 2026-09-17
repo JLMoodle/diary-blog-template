@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой дневник — данные</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Лаба 4: подключаем скрипт; defer — выполнить после разбора HTML -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Мой дневник</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О блоге</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main>
+      <section>
+        <h2>Последние записи</h2>
+        <!-- TODO лаба 4: сюда renderPosts() выведет разметку записей -->
+        <div id="posts"></div>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Категории</h2>
+      <ul>
+        <li><a href="#" data-category="study">Учёба</a></li>
+        <li><a href="#" data-category="hobby">Хобби</a></li>
+        <li><a href="#" data-category="tech">Технологии</a></li>
+        <li><a href="#" data-category="life">Жизнь</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>© <span id="year"></span> Мой дневник</footer>
+
+  <!-- комментарий: в лабах 5–6 сюда добавится форма, а затем — fetch -->
+</body>
+</html>
