@@ -1,0 +1,1 @@
+# diary-blog-template
