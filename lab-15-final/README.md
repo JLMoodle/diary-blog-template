@@ -70,6 +70,6 @@ git commit -m "[lab-15] <Фамилия>: финальная сборка и л�
 git pull --rebase && git push
 ```
 
-Сдаёте: `lab-15` + `https://github.com/JLMoodle/diary-blog-template/tree/main/lab-15-final/<Фамилия>`.
+Сдаёте: `lab-15` + `https://github.com/JLMoodle/diary-blog-template/tree/students/lab-15-final/<Фамилия>`.
 Тег `v1.2` — актуальная версия шаблона, её ставит преподаватель (не студенты).
 Поздравляю — это финал курса. 🎓

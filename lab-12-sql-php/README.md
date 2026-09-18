@@ -91,4 +91,4 @@ git add lab-12-sql-php/<Фамилия>/
 git commit -m "[lab-12] <Фамилия>: JOIN, GROUP BY, пагинация, FULLTEXT"
 git pull --rebase && git push
 ```
-Сдаёте: `lab-12` + `https://github.com/JLMoodle/diary-blog-template/tree/main/lab-12-sql-php/<Фамилия>`.
+Сдаёте: `lab-12` + `https://github.com/JLMoodle/diary-blog-template/tree/students/lab-12-sql-php/<Фамилия>`.

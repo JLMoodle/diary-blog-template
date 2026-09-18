@@ -18,11 +18,11 @@ git pull --rebase
 ## 2. Push отвергнут: non-fast-forward
 
 ```
-! [rejected]        main -> main (non-fast-forward)
+! [rejected]        students -> students (non-fast-forward)
 hint: Updates were rejected because the remote contains work that you do not have locally.
 ```
 
-Что случилось: кто-то уже запушил в `main` после вашего локального коммита.
+Что случилось: кто-то уже запушил в ветку `students` после вашего локального коммита.
 Что делать:
 
 ```bash
@@ -33,7 +33,7 @@ git push
 ## 3. Наезд на чужие правки: merge-коммит
 
 Если кто-то неаккуратно сделал `git pull` (без `--rebase`), в истории появится
-merge-коммит вида `Merge branch 'main' of ...`. Он не опасен, но мешает истории:
+merge-коммит вида `Merge branch 'students' of ...`. Он не опасен, но мешает истории:
 
 ```bash
 git log --oneline --graph    # увидите развилку
@@ -81,11 +81,22 @@ git log --oneline && git reset --hard <хеш>
 Тег `v1.2` ставит преподаватель: он фиксирует актуальное состояние шаблона,
 которое можно всегда переоткрыть заново.
 
+## 7. Преподаватель обновил шаблон (ветку `main`)
+
+Вы работаете в ветке `students`; шаблон и методички преподаватель правит в `main`.
+Конфликтов почти не будет: вы работаете в `lab-NN/<Фамилия>/`, преподаватель — в файлах
+скелета. После обновления преподавателем:
+
+```bash
+git pull --rebase origin main   # подтянуть свежий шаблон поверх ваших правок
+git push                         # отправить результат в students
+```
+
 ## Чек-лист перед каждым коммитом
 
 ```bash
 git status          # нет ли «чужих» изменений рядом
-git pull --rebase   # забрать правки группы
+git pull --rebase   # забрать правки группы (в ветке students)
 git add lab-NN/<Фамилия>/
 git commit -m "..."
 git push            # если rejected — см. п.2, это нормально
