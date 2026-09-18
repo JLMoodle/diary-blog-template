@@ -77,12 +77,13 @@
 - `UNIQUE` на `email`/`username`/`slug`; `ENUM` для `status`; индексы на FK и `created_at`;
 - импорт проходит повторно (`IF NOT EXISTS`), phpMyAdmin показывает связи.
 
+
 ## Как отправить
 
 ```bash
-cd diary-blog
-git add .
-git commit -m "[lab-10] Схема БД: users, categories, posts, comments, FK, индексы"
-git tag lab-10 && git push && git push --tags
+git add lab-10-schema/database/<Фамилия>/
+git commit -m "[lab-10] <Фамилия>: схема БД — FK, индексы, пользователи, записи, комментарии"
+git pull --rebase && git push
 ```
-Сдаёте: `lab-10` + ссылка `https://github.com/<ваш логин>/diary-blog/tree/lab-10`.
+Сдаёте: `lab-10` + `https://github.com/JLMoodle/diary-blog-template/tree/master/lab-10-schema/database/<Фамилия>`.
+Схема сохранялась по обучающему протоколу курса (см. lab-01): вся работа — в своей подпапке.
