@@ -85,5 +85,5 @@ git add lab-10-schema/database/<Фамилия>/
 git commit -m "[lab-10] <Фамилия>: схема БД — FK, индексы, пользователи, записи, комментарии"
 git pull --rebase && git push
 ```
-Сдаёте: `lab-10` + `https://github.com/JLMoodle/diary-blog-template/tree/master/lab-10-schema/database/<Фамилия>`.
+Сдаёте: `lab-10` + `https://github.com/JLMoodle/diary-blog-template/tree/main/lab-10-schema/database/<Фамилия>`.
 Схема сохранялась по обучающему протоколу курса (см. lab-01): вся работа — в своей подпапке.

@@ -37,7 +37,7 @@
   GROUP BY c.id, c.name
   ORDER BY c.name;
   ```
-- [ ] Пагинация: `?page=N`, `LIMIT ? OFFSET ?` (как в лабах 10/11), кнопки «‹ Назад / 1 2 3 … / Вперёд ›»;
+- [ ] Пагинация: `?page=N`, `LIMIT ? OFFSET ?`, кнопки «‹ Назад / 1 2 3 … / Вперёд ›»;
       общее число страниц = `ceil(COUNT(*) / PER_PAGE)`.
 - [ ] В sidebar — «последние комментарии» через подзапрос или JOIN (5 штук).
 - [ ] Поиск из лабы 8 переведён на `MATCH(title, content) AGAINST (?)` (FULLTEXT из лабы 10).
@@ -91,4 +91,4 @@ git add lab-12-sql-php/<Фамилия>/
 git commit -m "[lab-12] <Фамилия>: JOIN, GROUP BY, пагинация, FULLTEXT"
 git pull --rebase && git push
 ```
-Сдаёте: `lab-12` + `https://github.com/JLMoodle/diary-blog-template/tree/master/lab-12-sql-php/<Фамилия>`.
+Сдаёте: `lab-12` + `https://github.com/JLMoodle/diary-blog-template/tree/main/lab-12-sql-php/<Фамилия>`.

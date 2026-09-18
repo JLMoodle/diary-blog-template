@@ -12,17 +12,17 @@
 git pull --rebase
 ```
 
-Если git ругается «Your branch is ahead / divengine от origin» — не паникуйте, это и есть
+Если git ругается «Your branch is ahead / diverged от origin» — не паникуйте, это и есть
 нормальное состояние после чьей-то правки.
 
 ## 2. Push отвергнут: non-fast-forward
 
 ```
-! [rejected]        master -> master (non-fast-forward)
+! [rejected]        main -> main (non-fast-forward)
 hint: Updates were rejected because the remote contains work that you do not have locally.
 ```
 
-Что случилось: кто-то уже запушил в `master` после вашего локального коммита.
+Что случилось: кто-то уже запушил в `main` после вашего локального коммита.
 Что делать:
 
 ```bash
@@ -33,7 +33,7 @@ git push
 ## 3. Наезд на чужие правки: merge-коммит
 
 Если кто-то неаккуратно сделал `git pull` (без `--rebase`), в истории появится
-merge-коммит вида `Merge branch 'master' of ...`. Он не опасен, но мешает истории:
+merge-коммит вида `Merge branch 'main' of ...`. Он не опасен, но мешает истории:
 
 ```bash
 git log --oneline --graph    # увидите развилку

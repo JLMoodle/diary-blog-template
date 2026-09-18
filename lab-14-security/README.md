@@ -43,7 +43,7 @@
   действие на вашем сайте (картинка `<img src=".../delete.php?id=5">`, форма на чужом сайте).
   Продолжение с кодами — в лабе 15; сюда — ссылку:
   https://owasp.org/www-community/attacks/csrf
-- **Синхронизация токенов (синоним CSRF-токена) — паттерн «двойной передача», простое и
+- **Синхронизация токенов (синоним CSRF-токена) — паттерн «двойной передачи», простое и
   прочное решение:** https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
 - **Хеширование паролей** `password_hash()`/`password_verify()` (bcrypt), про «почему нельзя md5»:
   https://www.php.net/manual/ru/function.password-hash.php
@@ -53,8 +53,8 @@
 
 ## Ход работы
 
-1. `includes/functions.php`: добавьте (`finish` из лабы 13 — сюда не переносить) — добавьте
-   **заново** три функции CSRF из лабы 14 в один файл, если вы планируете сделать это удобно:
+1. `includes/functions.php`: добавьте три функции CSRF (сессия уже запущена в начале
+   `functions.php` — см. шаг 2):
    ```php
    function csrf_token(): string
    {
@@ -71,13 +71,16 @@
 
    function verify_csrf(): bool
    {
-       if (empty($_POST['csrf_token'])) return false;
-       return hash_equals(session_id(), '') && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']);
+       $sent   = $_POST['csrf_token'] ?? '';
+       $stored = $_SESSION['csrf_token'] ?? '';
+       return $stored !== '' && hash_equals($stored, $sent);
    }
    ```
-2. В header.php: `session_start();` в самом начале (до любого вывода).
+2. `session_start();` — в самом начале `includes/functions.php` (до любого вывода).
+   Важно: обработка POST в `add.php`/`edit.php`/`delete.php` идёт **до** `require header.php`,
+   поэтому сессия должна стартовать при подключении функций, а не в шапке.
 3. В каждую POST-форму после открытия: `<?php csrf_field(); ?>`.
-4. В начале обработчика POST любого файла:
+4. В начале обработчика POST любого файла (после подключения `functions.php`):
    ```php
    if ($_SERVER['REQUEST_METHOD'] === 'POST' && !verify_csrf()) {
        http_response_code(403);
@@ -116,7 +119,7 @@
 
 ## Как отправить (протокол курса)
 
-Сдача лабы = ваша подпапка `<Фамилия>/` в master **общего** репозитория.
+Сдача лабы = ваша подпапка `<Фамилия>/` в main **общего** репозитория.
 
 ```bash
 git add lab-14-security/<Фамилия>/
@@ -126,7 +129,7 @@ git push
 ```
 
 Отправьте преподавателю одну строку: `Сдаю: lab-14` + ссылку на вашу папку
-`https://github.com/JLMoodle/diary-blog-template/tree/master/lab-14-security/<Фамилия>`.
+`https://github.com/JLMoodle/diary-blog-template/tree/main/lab-14-security/<Фамилия>`.
 
 > Теги `lab-NN` и `v1.0` в шаблоне — вехи курса, их ставит преподаватель.
 > Студенты личные теги на сдачу не ставят.

@@ -46,3 +46,7 @@ function filterByCategory(list, category) {
 
 /* ---------- 6. Запуск ---------- */
 renderPosts(sortPostsByDate(posts));
+
+/* ---------- 7. Год в подвале ---------- */
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());

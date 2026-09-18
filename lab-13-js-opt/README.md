@@ -34,7 +34,7 @@
 - `Event.target` — где реально кликнули; `closest('[data-action]')` — ближайший предок с
   этим атрибутом. https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
 - **Debounce** — функция выполнится, только когда ввод «успокоился»:
-  https://learn.javascript.ru/task/debounce и https://www.npmjs.com/package/**нет** (делаем руками)
+  https://learn.javascript.ru/task/debounce (готовых библиотек не используем — делаем руками)
 - **Throttle через `requestAnimationFrame`**: https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
 - **DocumentFragment** — «черновик» в памяти; вставить за один раз:
   https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
@@ -67,7 +67,7 @@
 
 ## Как отправить (протокол курса)
 
-Сдача лабы = ваша подпапка `<Фамилия>/` в master **общего** репозитория.
+Сдача лабы = ваша подпапка `<Фамилия>/` в main **общего** репозитория.
 
 ```bash
 git add lab-13-js-opt/<Фамилия>/
@@ -77,7 +77,7 @@ git push
 ```
 
 Отправьте преподавателю одну строку: `Сдаю: lab-13` + ссылку на вашу папку
-`https://github.com/JLMoodle/diary-blog-template/tree/master/lab-13-js-opt/<Фамилия>`.
+`https://github.com/JLMoodle/diary-blog-template/tree/main/lab-13-js-opt/<Фамилия>`.
 
 > Теги `lab-NN` и `v1.0` в шаблоне — вехи курса, их ставит преподаватель.
 > Студенты личные теги на сдачу не ставят.

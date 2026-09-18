@@ -29,7 +29,7 @@ function createPostElement(post) {
   card.className = 'post';
 
   const h3 = document.createElement('h3');
-  h3.textContent = post.titlestr;
+  h3.textContent = post.title;
   card.append(h3);
 
   const timeEl = document.createElement('time');
@@ -84,6 +84,9 @@ categories.forEach(cat => {
   opt.textContent = cat;
   categorySelect.append(opt);
 });
+
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
 // TODO: отрендерить posts + добавленные пользователем из localStorage
 

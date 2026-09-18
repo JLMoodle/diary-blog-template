@@ -14,7 +14,7 @@
 
 **Тема:** динамическое формирование интерфейса и работа с пользовательским вводом.
 **Цель:** выводить записи через DOM-объекты (не строки), добавить форму «Новая запись» с
-валидацией и сохранять доба-вленные записи в `localStorage`.
+валидацией и сохранять добавленные записи в `localStorage`.
 
 ## Что нужно реализовать (чек-лист)
 
@@ -55,9 +55,9 @@
      const card = document.createElement('article');
      card.className = 'post';
 
-     const h3 = document.createElement('h3');
-     h3.textContent = post.title;
-     card.append(h3apsed);
+const h3 = document.createElement('h3');
+      h3.textContent = post.title;
+      card.append(h3);
 
      const timeEl = document.createElement('time');
      timeEl.dateTime = post.date;      // атрибут datetime
@@ -104,7 +104,7 @@
 
 ## Как отправить (протокол курса)
 
-Сдача лабы = ваша подпапка `<Фамилия>/` в master **общего** репозитория.
+Сдача лабы = ваша подпапка `<Фамилия>/` в main **общего** репозитория.
 
 ```bash
 git add lab-05-js-dom/<Фамилия>/
@@ -114,7 +114,7 @@ git push
 ```
 
 Отправьте преподавателю одну строку: `Сдаю: lab-05` + ссылку на вашу папку
-`https://github.com/JLMoodle/diary-blog-template/tree/master/lab-05-js-dom/<Фамилия>`.
+`https://github.com/JLMoodle/diary-blog-template/tree/main/lab-05-js-dom/<Фамилия>`.
 
 > Теги `lab-NN` и `v1.0` в шаблоне — вехи курса, их ставит преподаватель.
 > Студенты личные теги на сдачу не ставят.

@@ -63,7 +63,8 @@ nav a {
 
 /* ---------- 5. Раскладка страницы ---------- */
 .layout {
-  /* TODO лаба 3: Grid: колонка контента и сайдбар (например 1fr 280px) */
+  /* TODO лаба 3: подберите ширину сайдбара (сейчас колонки 1fr 280px) */
+  grid-template-columns: 1fr 280px;
   display: grid;
   gap: var(--gap);
   max-width: 1000px;
@@ -104,6 +105,10 @@ aside ul {
   /* TODO лаба 3: оформление списка категорий */
 }
 
+aside li a.active {
+  font-weight: 600;
+}
+
 /* ---------- 8. Кнопки и формы (пригодится в лабах 5, 8, 11) ---------- */
 button,
 .btn {
@@ -128,6 +133,16 @@ textarea {
   border: 1px solid #ccc;
   border-radius: var(--radius);
   font: inherit;
+}
+
+/* Ошибки форм (пригодятся в лабе 5) */
+.error {
+  color: var(--color-muted);
+}
+
+.frm-row {
+  display: grid;
+  gap: 0.4rem;
 }
 
 /* ---------- 9. Подвал ---------- */
