@@ -17,10 +17,22 @@
 
 ```bash
 git clone https://github.com/JLMoodle/diary-blog-template.git
+```
+```bash
 cd diary-blog-template
+```
+
+```bash
 git config user.name  "Ваше Имя"
+```
+```bash
 git config user.email "you@example.com"
+```
+
+```bash
 git fetch origin
+```
+```bash
 git checkout -b students origin/students   # рабочая ветка группы (дальше просто students)
 ```
 
@@ -35,8 +47,14 @@ mkdir lab-02-html/<Фамилия>
 
 ```bash
 git add lab-02-html/<Фамилия>/
+```
+```bash
 git commit -m "[lab-02] <Фамилия>: семантическая структура страниц"
+```
+```bash
 git pull --rebase
+```
+```bash
 git push
 ```
 
