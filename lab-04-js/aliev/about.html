@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Мой дневник — о блоге</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Мой дневник</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О блоге</a>
+    </nav>
+  </header>
+
+  <main class="about-page">
+    <section class="about-card">
+      <h2>Об авторе</h2>
+      <p>Меня зовут Алиев Махмуд, я студент группы 8-24ИСиТ. Этот дневник создан в рамках лабораторных работ по дисциплине «Оптимизация клиент-серверных приложений».</p>
+      <p>В блоге я фиксирую свои наблюдения об учёбе, технологиях, хобби и повседневной жизни. Проект постепенно развивается: сначала появилась HTML-структура, затем оформление CSS, а теперь записи формируются средствами JavaScript.</p>
+      <h2>Что уже реализовано</h2>
+      <ul>
+        <li>семантическая структура страниц и адаптивная вёрстка;</li>
+        <li>единая тема оформления и карточки записей;</li>
+        <li>массив данных, сортировка и фильтрация по категориям.</li>
+      </ul>
+      <p><a class="back-link" href="index.html">← Вернуться к записям</a></p>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Мой дневник · Алиев Махмуд</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
