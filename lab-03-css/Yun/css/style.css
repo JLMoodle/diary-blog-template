@@ -1,0 +1,308 @@
+
+/* =========================================
+   МОЙ ДНЕВНИК — DARK PINK
+   Лабораторная работа №3
+   ========================================= */
+
+/* 1. Цветовая палитра */
+:root {
+  --color-bg: #171619;
+  --color-surface: #222025;
+  --color-card: #29232B;
+  --color-text: #F4EDF2;
+  --color-muted: #B5A7B1;
+  --color-accent: #E58AB5;
+  --color-accent-dark: #A94F7D;
+  --color-border: #443440;
+
+  --gap: 1.5rem;
+  --radius: 14px;
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 2. Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+  transition: 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 3. Шапка сайта */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem max(5%, calc((100% - 1000px) / 2));
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* 4. Навигация */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
+/* 5. Основная структура */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 var(--gap);
+  align-items: start;
+}
+
+main {
+  min-width: 0;
+}
+
+main h2,
+aside h2 {
+  color: var(--color-accent);
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+}
+
+/* 6. Карточки записей */
+article.post {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  margin-bottom: var(--gap);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+article.post:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent-dark);
+}
+
+article.post h3 {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+article.post time {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+article.post p {
+  margin: 0.8rem 0;
+}
+
+.read-more {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.read-more:hover {
+  color: #F6B5D2;
+  text-decoration: underline;
+}
+
+/* 7. Боковая панель */
+aside {
+  background: var(--color-card);
+  padding: 1.3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+aside li:last-child {
+  border-bottom: none;
+}
+
+aside li a {
+  display: block;
+  padding: 0.65rem 0.3rem;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+aside li a:hover {
+  color: var(--color-accent);
+  padding-left: 0.7rem;
+}
+
+aside p {
+  color: var(--color-muted);
+}
+
+/* 8. Страница «О блоге» */
+.about-content {
+  background: var(--color-card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+.about-content h3 {
+  color: var(--color-accent);
+  margin: 1.5rem 0 0.7rem;
+}
+
+.about-content ul {
+  padding-left: 1.5rem;
+}
+
+.about-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* 9. Подвал */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* 10. Кнопки и поля */
+button,
+.btn {
+  background: var(--color-accent-dark);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  max-width: 100%;
+}
+
+.error {
+  color: var(--color-accent);
+}
+
+.frm-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* 11. Планшеты */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    margin: 1.5rem auto;
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* 12. Мобильные устройства */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.3rem;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .layout {
+    padding: 0 0.8rem;
+    gap: 1rem;
+  }
+
+  article.post {
+    padding: 1rem;
+  }
+
+  .about-content {
+    padding: 1rem;
+  }
+}
