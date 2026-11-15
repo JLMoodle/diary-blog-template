@@ -1,0 +1,228 @@
+/* ============================================================
+   Мой дневник — таблица стилей
+   Рабочий файл лабораторной №3.
+   Дополняется в лабораторной №13 (оптимизация CSS/JS), не удалять!
+   ============================================================ */
+
+/* ---------- 1. Тема: CSS-переменные ---------- */
+:root {
+  --color-bg: #f7f5f2;        /* фон страницы */
+  --color-text: #2b2b2b;      /* основной текст */
+  --color-muted: #6b6b6b;     /* приглушённый текст (даты, подписи) */
+  --color-accent: #9c27b0;    /* акцент (ссылки, кнопки, заголовки) */
+  --color-card: #ffffff;      /* фон «карточек» записей */
+
+  --gap: 1.25rem;             /* отступ между блоками */
+  --radius: 12px;             /* скругление углов */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- 2. Ресет ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 3. База ---------- */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- 4. Шапка и меню ---------- */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- 5. Раскладка страницы ---------- */
+.layout {
+  grid-template-columns: 1fr 280px;
+  display: grid;
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+/* ---------- 6. Записи (карточки) ---------- */
+article.post {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--gap);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+article.post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+article.post h3 {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+article.post time {
+  color: var(--color-muted);
+  font-size: 0.85em;
+}
+
+article.post p {
+  margin: 0.5rem 0;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 7. Сайдбар (категории) ---------- */
+
+aside {
+  background: var(--color-card);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+aside h2 {
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin-bottom: 0.7rem;
+}
+
+aside li a {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+aside li a:hover {
+  background: var(--color-bg);
+  color: var(--color-accent);
+}
+
+aside li a.active {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ---------- 8. Кнопки и формы (пригодится в лабах 5, 8, 11) ---------- */
+button,
+.btn {
+  background: var(--color-accent);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  filter: brightness(0.92);
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+/* Ошибки форм (пригодятся в лабе 5) */
+.error {
+  color: var(--color-muted);
+}
+
+.frm-row {
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* ---------- 9. Подвал ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-muted);
+}
+
+/* ---------- 10. Адаптивность ---------- */
+
+/* Планшеты и небольшие экраны */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+    nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .layout {
+    padding: 0.75rem;
+  }
+
+  article.post {
+    padding: 1rem;
+  }
+}
