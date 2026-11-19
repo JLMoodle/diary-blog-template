@@ -1,10 +1,4 @@
 <?php
-/**
- * posts/add.php — форма добавления записи (лаба 8).
- * Форма отправляется методом POST «на саму себя» (action=""),
- * обработка и вывод — в одном файле. После успеха — редирект (PRG),
- * чтобы повторное обновление (F5) не создавало дубликат.
- */
 
 require dirname(__DIR__) . '/includes/functions.php';
 
@@ -45,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
+$pageTitle = 'Новая запись';
+require dirname(__DIR__) . '/includes/header.php';
 ?>
 <main class="layout">
   <section>
