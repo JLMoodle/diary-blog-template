@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дневник — Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Мой дневник</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <main>
+            <section>
+                <h2>Последние записи</h2>
+                <section id="posts"></section>
+            </section>
+
+            <!-- Добавленная форма для Лабораторной работы №5 -->
+            <section>
+                <h2>Новая запись</h2>
+                <form id="add-post">
+                    <div>
+                        <label for="title">Заголовок:</label><br>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div>
+                        <label for="category">Категория:</label><br>
+                        <select id="category" name="category">
+                        </select>
+                    </div>
+                    <div>
+                        <label for="content">Текст записи:</label><br>
+                        <textarea id="content" name="content"></textarea>
+                    </div>
+                    <button type="submit">Добавить запись</button>
+                </form>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Категории</h3>
+            <ul>
+                <li><a href="#">study</a></li>
+                <li><a href="#">hobby</a></li>
+                <li><a href="#">tech</a></li>
+                <li><a href="#">life</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Мой дневник</p>
+    </footer>
+</body>
+</html>
