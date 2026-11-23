@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — Мой дневник</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><span class="book" aria-hidden="true">▤</span> Мой дневник</h1>
+        <nav>
+            <a href="index.html" aria-current="page">Главная</a>
+            <a href="about.html">О блоге</a>
+        </nav>
+    </header>
+    <main class="layout">
+        <section class="desktop">
+            <h2>Последние записи</h2>
+            <section class="board" id="posts" aria-label="Записи дневника"></section>
+        </section>
+        <aside>
+            <h2>Категории</h2>
+            <ul>
+                <li><button data-category="" aria-pressed="true">Все записи</button></li>
+                <li><button data-category="Музыка" aria-pressed="false">Музыка</button></li>
+                <li><button data-category="Фотоплёнка" aria-pressed="false">Фотоплёнка</button></li>
+                <li><button data-category="Заметки" aria-pressed="false">Заметки</button></li>
+            </ul>
+        </aside>
+        <div id="windows"></div>
+    </main>
+    <footer><p>2026 Мой дневник</p></footer>
+</body>
+</html>
