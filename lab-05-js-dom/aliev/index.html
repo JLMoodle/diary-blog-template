@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Мой дневник — записи</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Мой дневник</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О блоге</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main>
+      <section>
+        <h2>Последние записи</h2>
+        <div id="posts"></div>
+      </section>
+
+      <section id="post-form">
+        <h2>Новая запись</h2>
+        <p class="form-hint">Заголовок — не короче 3 символов, текст — не короче 20 символов.</p>
+        <form id="add-post" novalidate>
+          <div class="frm-row">
+            <label for="title">Заголовок</label>
+            <input type="text" id="title" name="title" autocomplete="off">
+            <p class="error" id="title-error"></p>
+          </div>
+          <div class="frm-row">
+            <label for="category">Категория</label>
+            <select id="category" name="category"></select>
+            <p class="error" id="category-error"></p>
+          </div>
+          <div class="frm-row">
+            <label for="content">Текст записи</label>
+            <textarea id="content" name="content" rows="6"></textarea>
+            <p class="error" id="content-error"></p>
+          </div>
+          <button type="submit">Опубликовать</button>
+        </form>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Категории</h2>
+      <ul id="categories">
+        <li><a href="#" data-category="all" class="active">Все</a></li>
+        <li><a href="#" data-category="study">Учёба</a></li>
+        <li><a href="#" data-category="hobby">Хобби</a></li>
+        <li><a href="#" data-category="tech">Технологии</a></li>
+        <li><a href="#" data-category="life">Жизнь</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>© <span id="year"></span> Мой дневник · Алиев Махмуд</footer>
+</body>
+</html>
