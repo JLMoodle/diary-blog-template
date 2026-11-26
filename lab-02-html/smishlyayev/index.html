@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — Мой дневник</title>
+    <style>
+        article + article { margin-top: 2.5rem; }
+        time { display: block; margin-block: 1.5rem; }
+        summary { color: #0645ad; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мой дневник</h1>
+        <nav>
+            <a href="index.html" aria-current="page">Главная</a>
+            <a href="about.html">О блоге</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Последние записи</h2>
+
+            <article id="music">
+                <h3>Ещё один круг</h3>
+                <time datetime="2026-11-23">23 ноября 2026</time>
+                <p>Самое обидное в короткой дороге — когда ты уже у подъезда,
+                    а в наушниках только начался лучший кусок трека.</p>
+                <details>
+                    <summary>Продолжение записи</summary>
+                    <p id="more-music">Есть два варианта: выключить на полуслове
+                        или сделать круг вокруг дома. У второго есть минус.
+                        На обратном пути может начаться ещё один хороший трек.</p>
+                </details>
+            </article>
+
+            <article id="photos">
+                <h3>Луна размером с пиксель</h3>
+                <time datetime="2026-11-22">22 ноября 2026</time>
+                <p>Глазами видишь огромную луну над крышей. Достаёшь телефон —
+                    и вот у тебя на чёрном фоне белая точка.</p>
+                <details>
+                    <summary>Продолжение записи</summary>
+                    <p id="more-photos">Такую фотку легко удалить. А потом замечаешь
+                        в нижнем углу вывеску магазина и сразу вспоминаешь,
+                        откуда смотрел. Ради этого угла пусть лежит.</p>
+                </details>
+            </article>
+
+            <article id="notes">
+                <h3>Важная мысль в час ночи</h3>
+                <time datetime="2026-11-21">21 ноября 2026</time>
+                <p>Если ночью записать «утром пойму», утром у тебя будет
+                    ровно одна зацепка. Почерк твой.</p>
+                <details>
+                    <summary>Продолжение записи</summary>
+                    <p id="more-notes">Предлагаю правило для ночных заметок:
+                        оставлять хотя бы одно существительное. «Утром пойму
+                        про чайник» — уже какое-то начало расследования.</p>
+                </details>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Категории</h2>
+            <ul>
+                <li><a href="#music">Музыка</a></li>
+                <li><a href="#photos">Фотоплёнка</a></li>
+                <li><a href="#notes">Заметки</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer><p>2026 Мой дневник</p></footer>
+</body>
+</html>
