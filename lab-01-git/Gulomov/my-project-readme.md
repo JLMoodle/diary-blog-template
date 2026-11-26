@@ -9,7 +9,7 @@
 
 - **Имя и фамилия:** Amirbek Gulomov
 - **Группа / курс:** 8-24
-- **Репозиторий проекта:** https://github.com/<amirbekgulomov1610-stack>/diary-blog
+- **Репозиторий проекта:** https://github.com/amirbekgulomov1610-stack/diary-blog 
 - **Тема блога (1 предложение):** Личный блог о учёбе и программировании.
 ---
 
